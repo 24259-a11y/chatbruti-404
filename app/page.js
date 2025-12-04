@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, Info, X } from "lucide-react";
+import { Send, Info, X, Moon, Sun } from "lucide-react";
 
 export default function HomePage() {
   const [messages, setMessages] = useState([
@@ -16,8 +16,42 @@ export default function HomePage() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [theme, setTheme] = useState("system"); // 'light', 'dark', 'system'
+
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
+
+  // Initialize theme
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    } else {
+      const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(systemDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", systemDark ? "dark" : "light");
+    }
+
+    // Listen for system changes if no manual override
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e) => {
+      if (!localStorage.getItem("theme")) {
+        const newTheme = e.matches ? "dark" : "light";
+        setTheme(newTheme);
+        document.documentElement.setAttribute("data-theme", newTheme);
+      }
+    };
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
+  function toggleTheme() {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  }
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -106,6 +140,13 @@ export default function HomePage() {
             </div>
           </div>
           <div className="navbar-actions">
+            <button
+              className="icon-btn"
+              onClick={toggleTheme}
+              title={theme === "dark" ? "Mode Clair" : "Mode Sombre"}
+            >
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
             <button
               className="icon-btn"
               onClick={() => setIsModalOpen(true)}

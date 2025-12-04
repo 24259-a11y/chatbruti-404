@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
+  /* Default to Light Mode */
+  color-scheme: light;
+  --bg-dark: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --bg-card-border: rgba(0, 0, 0, 0.1);
+
+  --primary: #8b5cf6;
+  --primary-glow: rgba(139, 92, 246, 0.3);
+  --secondary: #ec4899;
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --glass-border: 1px solid rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+
+  /* Component Colors */
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --footer-bg: rgba(255, 255, 255, 0.4);
+  --bot-bubble-bg: rgba(241, 245, 249, 0.8);
+  --input-area-bg: rgba(255, 255, 255, 0.4);
+  --input-container-bg: rgba(255, 255, 255, 0.6);
+  --modal-bg: #ffffff;
+}
+
+[data-theme="dark"] {
   color-scheme: dark;
   --bg-dark: #020617;
   --bg-card: rgba(15, 23, 42, 0.6);
@@ -16,6 +43,14 @@
   --glass-border: 1px solid rgba(255, 255, 255, 0.08);
   --glass-bg: rgba(15, 23, 42, 0.6);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Component Colors */
+  --navbar-bg: rgba(2, 6, 23, 0.8);
+  --footer-bg: rgba(2, 6, 23, 0.4);
+  --bot-bubble-bg: rgba(30, 41, 59, 0.8);
+  --input-area-bg: rgba(2, 6, 23, 0.4);
+  --input-container-bg: rgba(15, 23, 42, 0.6);
+  --modal-bg: #0f172a;
 }
 
 *,
@@ -61,7 +96,7 @@ body {
 /* Navbar */
 .navbar {
   width: 100%;
-  background: rgba(2, 6, 23, 0.8);
+  background: var(--navbar-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(148, 163, 184, 0.1);
@@ -220,7 +255,7 @@ body {
 }
 
 .message-bubble.bot {
-  background: rgba(30, 41, 59, 0.8);
+  background: var(--bot-bubble-bg);
   border: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--text-main);
   border-bottom-left-radius: 4px;
@@ -237,7 +272,7 @@ body {
 /* Input Area */
 .input-area {
   padding: 20px 24px;
-  background: rgba(2, 6, 23, 0.4);
+  background: var(--input-area-bg);
   border-top: var(--glass-border);
 }
 
@@ -246,7 +281,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--input-container-bg);
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 16px;
   padding: 8px 8px 8px 16px;
@@ -351,7 +386,7 @@ body {
 }
 
 .modal-content {
-  background: #0f172a;
+  background: var(--modal-bg);
   border: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 20px;
   padding: 24px;
@@ -388,7 +423,7 @@ body {
 .footer {
   text-align: center;
   padding: 24px 20px;
-  background: rgba(2, 6, 23, 0.4);
+  background: var(--footer-bg);
   border-top: var(--glass-border);
 }
 
