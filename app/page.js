@@ -231,7 +231,7 @@ export default function HomePage() {
           Fait avec 🤡 pour la <strong>Nuit de l'Info 2025</strong>
         </p>
         <p className="footer-links">
-          <a href="https://github.com/24259-a11y/chatbruti-ammar" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/24259-a11y/chatbruti-404" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
           {" • "}
