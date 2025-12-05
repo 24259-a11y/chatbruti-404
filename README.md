@@ -15,7 +15,7 @@
 
 ## Défi "Chat'bruti" - Viveris
 
-**Prix:** 1ers: 600€ • 2ds: 300€ • 3èmes: 100€  
+
 **Sponsor:** [VIVERIS](https://www.viveris.fr)
 
 ### Le Concept
