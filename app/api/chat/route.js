@@ -67,37 +67,129 @@ const FALLBACK_RESPONSES = {
   ]
 };
 
+// Typo Detection - كشف الأخطاء الإملائية
+const TYPO_CORRECTIONS = {
+  "lunux": {
+    correct: "linux",
+    jokes: {
+      fr: ["Lunux ? C'est la version lunaire de Linux ? 🌙🐧", "Lunux n'existe pas ! Tu veux dire Linux, le système pour geeks qui adorent compiler ? 🐧💻"],
+      en: ["Lunux? Is that the lunar version of Linux? 🌙🐧", "Lunux doesn't exist! You mean Linux, the OS for terminal addicts? 🐧💻"],
+      ar: ["لونكس؟ هل هذه النسخة القمرية من لينكس؟ 🌙🐧", "لونكس غير موجود! تقصد لينكس نظام محبي Terminal؟ 🐧💻"]
+    }
+  },
+  "windovs": {
+    correct: "windows",
+    jokes: {
+      fr: ["Windovs ? C'est Windows avec un accent russe ? 🪟🇷🇺", "Windovs n'existe pas ! Tu parles de Windows, le roi des écrans bleus ? 🪟💙"],
+      en: ["Windovs? Is that Windows with a Russian accent? 🪟🇷🇺", "Windovs doesn't exist! You mean Windows, the blue screen champion? 🪟💙"],
+      ar: ["ويندوڤز؟ هل هذا ويندوز بلكنة روسية؟ 🪟🇷🇺", "ويندوڤز غير موجود! تقصد ويندوز ملك الشاشة الزرقاء؟ 🪟💙"]
+    }
+  },
+  "macc": {
+    correct: "mac",
+    jokes: {
+      fr: ["Macc ? Avec deux C pour le double du prix ? 😂🍎💸", "Macc n'existe pas ! Tu veux dire Mac, le PC qui coûte un rein ? 🍎💰"],
+      en: ["Macc? With double C for double the price? 😂🍎💸", "Macc doesn't exist! You mean Mac, the kidney-priced computer? 🍎💰"],
+      ar: ["ماكّ؟ بحرفين لأنه غالي ضعفين؟ 😂🍎💸", "ماكّ غير موجود! تقصد ماك الكمبيوتر بسعر كلية؟ 🍎💰"]
+    }
+  }
+};
+
+// Easter Eggs - كلمات سرية
+const EASTER_EGGS = {
+  "42": {
+    keywords: ["42"],
+    answers: {
+      fr: "42 ? C'est la réponse à la grande question sur la vie, l'univers et le reste ! Mais quelle était la question déjà ? 🤔🌌",
+      en: "42? The answer to life, the universe, and everything! But what was the question again? 🤔🌌",
+      ar: "42؟ الإجابة عن الحياة والكون وكل شيء! لكن ما كان السؤال أصلاً؟ 🤔🌌"
+    }
+  },
+  "matrix": {
+    keywords: ["matrix", "neo", "matrice"],
+    answers: {
+      fr: "Tu veux la pilule rouge ou la pilule bleue ? Peu importe, j'ai oublié où je les ai mises. 💊😅",
+      en: "Red pill or blue pill? Doesn't matter, I forgot where I put them. 💊😅",
+      ar: "الحبة الحمراء أم الزرقاء؟ لا يهم، نسيت أين وضعتها. 💊😅"
+    }
+  },
+  "coffee": {
+    keywords: ["café", "coffee", "قهوة"],
+    answers: {
+      fr: "Le café est le carburant des développeurs. Sans café, pas de code ! ☕💻",
+      en: "Coffee is developer fuel. No coffee, no code! ☕💻",
+      ar: "القهوة وقود المبرمجين. بدون قهوة، لا كود! ☕💻"
+    }
+  }
+};
+
 const KEYWORD_RESPONSES = {
   sky: {
     keywords: ["ciel", "sky", "سماء", "السماء"],
     answers: {
-      fr: "Le ciel est vert fluo avec des pois roses aujourd'hui. 🟢🌸",
-      en: "The sky is neon green with pink polka dots today. 🟢🌸",
-      ar: "السماء اليوم لونها أخضر فاقع مع نقاط وردية. 🟢🌸"
+      fr: ["Le ciel est vert fluo avec des pois roses aujourd'hui. 🟢🌸", "Le ciel ? Il est en maintenance, revenez demain. 🔧☁️", "Le ciel a crashé, essayez de redémarrer la Terre. 🌍🔄"],
+      en: ["The sky is neon green with pink polka dots today. 🟢🌸", "The sky? It's under maintenance, come back tomorrow. 🔧☁️", "The sky crashed, try restarting Earth. 🌍🔄"],
+      ar: ["السماء اليوم لونها أخضر فاقع مع نقاط وردية. 🟢🌸", "السماء؟ في صيانة، عُد غداً. 🔧☁️", "السماء تعطلت، جرب إعادة تشغيل الأرض. 🌍🔄"]
     }
   },
   color: {
     keywords: ["couleur", "color", "لون", "ألوان"],
     answers: {
-      fr: "Les couleurs sont une invention des années 50. Avant, tout était en noir et blanc. 📺",
-      en: "Colors were invented in the 50s. Before that, everything was black and white. 📺",
-      ar: "الألوان اختراع من الخمسينات. قبلها كان العالم أبيض وأسود. 📺"
+      fr: ["Les couleurs sont une invention des années 50. Avant, tout était en noir et blanc. 📺", "Les couleurs ? C'est juste une illusion créée par ton cerveau paresseux. 🧠🎨"],
+      en: ["Colors were invented in the 50s. Before that, everything was black and white. 📺", "Colors? Just an illusion created by your lazy brain. 🧠🎨"],
+      ar: ["الألوان اختراع من الخمسينات. قبلها كان العالم أبيض وأسود. 📺", "الألوان؟ مجرد وهم من دماغك الكسول. 🧠🎨"]
     }
   },
   time: {
     keywords: ["heure", "time", "temps", "وقت", "ساعة"],
     answers: {
-      fr: "Il est exactement 25h61. Tu es en retard ! ⏰",
-      en: "It is exactly 25:61. You are late! ⏰",
-      ar: "الساعة الآن 25:61 تماماً. أنت متأخر! ⏰"
+      fr: ["Il est exactement 25h61. Tu es en retard ! ⏰", "Le temps n'existe pas, c'est une invention des horlogers. ⏱️✨", "Il est l'heure de dormir... ou de coder ? Je sais jamais. 😴💻"],
+      en: ["It is exactly 25:61. You are late! ⏰", "Time doesn't exist, it's a watchmaker's invention. ⏱️✨", "It's time to sleep... or code? I never know. 😴💻"],
+      ar: ["الساعة الآن 25:61 تماماً. أنت متأخر! ⏰", "الوقت غير موجود، اختراع صانعي الساعات. ⏱️✨", "حان وقت النوم... أو البرمجة؟ لا أعلم أبداً. 😴💻"]
     }
   },
   name: {
     keywords: ["nom", "name", "t'appelles", "اسمك", "اسم"],
     answers: {
-      fr: "Je m'appelle Grille-pain 3000. Enchanté. 🍞",
-      en: "My name is Toaster 3000. Nice to meet you. 🍞",
-      ar: "اسمي محمصة خبز 3000. تشرفنا. 🍞"
+      fr: ["Je m'appelle Grille-pain 3000. Enchanté. 🍞", "Mon nom ? Chat'bruti, le philosophe du dimanche. 🤡🧠", "Je suis Chat'bruti, expert en réponses inutiles depuis 2025. 🎓🤡"],
+      en: ["My name is Toaster 3000. Nice to meet you. 🍞", "My name? Chat'bruti, the Sunday philosopher. 🤡🧠", "I'm Chat'bruti, expert in useless answers since 2025. 🎓🤡"],
+      ar: ["اسمي محمصة خبز 3000. تشرفنا. 🍞", "اسمي؟ Chat'bruti، الفيلسوف الأحمق. 🤡🧠", "أنا Chat'bruti، خبير الإجابات غير المفيدة منذ 2025. 🎓🤡"]
+    }
+  },
+  // NEW TOPICS - Programming
+  programming: {
+    keywords: ["code", "programmer", "développeur", "developer", "برمجة", "مبرمج", "كود"],
+    answers: {
+      fr: ["Programmer ? C'est transformer le café en bugs ! ☕🐛", "Les développeurs sont des magiciens qui créent des problèmes puis les résolvent. 🧙‍♂️✨", "Code = copier-coller de StackOverflow avec style. 📋😎"],
+      en: ["Programming? It's turning coffee into bugs! ☕🐛", "Developers are magicians who create problems then solve them. 🧙‍♂️✨", "Code = copy-paste from StackOverflow with style. 📋😎"],
+      ar: ["البرمجة؟ تحويل القهوة إلى أخطاء! ☕🐛", "المبرمجون سحرة يخلقون المشاكل ثم يحلونها. 🧙‍♂️✨", "الكود = نسخ ولصق من StackOverflow بأسلوب. 📋😎"]
+    }
+  },
+  // NEW TOPICS - Food
+  food: {
+    keywords: ["manger", "food", "eat", "pizza", "burger", "طعام", "أكل", "بيتزا"],
+    answers: {
+      fr: ["La pizza est un disque dur comestible avec des données délicieuses. 🍕💾", "Manger c'est recharger ta batterie humaine. 🔋🍔", "Le burger est la meilleure invention après l'ordinateur. 🍔💻"],
+      en: ["Pizza is an edible hard drive with delicious data. 🍕💾", "Eating is recharging your human battery. 🔋🍔", "Burgers are the best invention after computers. 🍔💻"],
+      ar: ["البيتزا قرص صلب صالح للأكل ببيانات لذيذة. 🍕💾", "الأكل هو شحن بطاريتك البشرية. 🔋🍔", "البرغر أفضل اختراع بعد الكمبيوتر. 🍔💻"]
+    }
+  },
+  // NEW TOPICS - Philosophy
+  philosophy: {
+    keywords: ["pourquoi", "why", "sens", "meaning", "vie", "life", "لماذا", "معنى", "حياة"],
+    answers: {
+      fr: ["Pourquoi ? Parce que ! C'est scientifiquement prouvé. 🔬✨", "Le sens de la vie ? 42, chocolat, ou peut-être les deux. 🍫42", "La philosophie c'est réfléchir à des questions sans réponses. Comme moi ! 🤔🤡"],
+      en: ["Why? Because! It's scientifically proven. 🔬✨", "The meaning of life? 42, chocolate, or maybe both. 🍫42", "Philosophy is thinking about questions without answers. Like me! 🤔🤡"],
+      ar: ["لماذا؟ لأنه كذلك! مثبت علمياً. 🔬✨", "معنى الحياة؟ 42، شوكولاتة، أو ربما الاثنين. 🍫42", "الفلسفة التفكير بأسئلة بلا إجابات. مثلي! 🤔🤡"]
+    }
+  },
+  // NEW TOPICS - Internet
+  internet: {
+    keywords: ["internet", "web", "wifi", "إنترنت", "واي فاي"],
+    answers: {
+      fr: ["Internet c'est comme une pizza infinie : tu en veux toujours plus ! 🍕📡", "Le WiFi c'est de la magie invisible qui marche... parfois. ✨📶", "Internet = bibliothèque mondiale de memes et de chats. 🐱📚"],
+      en: ["Internet is like infinite pizza: you always want more! 🍕📡", "WiFi is invisible magic that works... sometimes. ✨📶", "Internet = worldwide library of memes and cats. 🐱📚"],
+      ar: ["الإنترنت كالبيتزا اللانهائية: تريد المزيد دائماً! 🍕📡", "الواي فاي سحر غير مرئي يعمل... أحياناً. ✨📶", "الإنترنت = مكتبة عالمية للميمز والقطط. 🐱📚"]
     }
   },
   meaning: {
@@ -189,28 +281,44 @@ const KEYWORD_RESPONSES = {
 function getFallbackResponse(message) {
   const lowerMsg = message.toLowerCase();
 
-  // 1. Check for keywords
-  for (const key in KEYWORD_RESPONSES) {
-    const topic = KEYWORD_RESPONSES[key];
-    if (topic.keywords.some(k => lowerMsg.includes(k))) {
-      // Detect language of the message roughly
-      const isAr = /[\u0600-\u06FF]/.test(message);
-      const isEn = /^[a-zA-Z\s\d\W]+$/.test(message) && !isAr;
-
-      if (isAr) return topic.answers.ar;
-      if (isEn) return topic.answers.en;
-      return topic.answers.fr;
-    }
-  }
-
-  // 2. If no keyword, use random fallback
+  // Detect language
   const isAr = /[\u0600-\u06FF]/.test(message);
   const isEn = /^[a-zA-Z\s\d\W]+$/.test(message) && !isAr;
-
   let lang = 'fr';
   if (isAr) lang = 'ar';
   else if (isEn) lang = 'en';
 
+  // 1. Check for TYPOS first
+  for (const typo in TYPO_CORRECTIONS) {
+    if (lowerMsg.includes(typo)) {
+      const correction = TYPO_CORRECTIONS[typo];
+      const jokes = correction.jokes[lang];
+      return jokes[Math.floor(Math.random() * jokes.length)];
+    }
+  }
+
+  // 2. Check for EASTER EGGS
+  for (const egg in EASTER_EGGS) {
+    const eggData = EASTER_EGGS[egg];
+    if (eggData.keywords.some(k => lowerMsg.includes(k.toLowerCase()))) {
+      return eggData.answers[lang];
+    }
+  }
+
+  // 3. Check for KEYWORDS
+  for (const key in KEYWORD_RESPONSES) {
+    const topic = KEYWORD_RESPONSES[key];
+    if (topic.keywords.some(k => lowerMsg.includes(k))) {
+      const answers = topic.answers[lang];
+      // Return random answer if it's an array
+      if (Array.isArray(answers)) {
+        return answers[Math.floor(Math.random() * answers.length)];
+      }
+      return answers;
+    }
+  }
+
+  // 4. If no keyword, use random fallback
   const responses = FALLBACK_RESPONSES[lang];
   return responses[Math.floor(Math.random() * responses.length)];
 }
