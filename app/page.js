@@ -20,7 +20,7 @@ export default function HomePage() {
       {
         id: "welcome",
         sender: "bot",
-        text: "👋 Ouaf! Je suis Brutus, un chien jaune qui adore aider... mais je me trompe toujours! 🐕💛 Dis-moi, tu préfères les os ou les balles? 🦴⚾",
+        text: "👋 Salut ! Je m'appelle Chat'bruti, ton scientifique inutile mais charmant. Dis-moi, quel système d'exploitation tu utilises ? Windows, Mac, Linux... ou peut-être une calculatrice ? 🤓💻",
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }
     ]);
@@ -140,8 +140,8 @@ export default function HomePage() {
           <div className="brand">
             <img src="/brutus-logo.png" alt="Brutus Logo" className="logo-img" />
             <div>
-              <h1 className="title">Brutus</h1>
-              <p className="subtitle">Le chien le plus adorablement stupide de l'internet</p>
+              <h1 className="title">Chat'bruti</h1>
+              <p className="subtitle">L'intelligence artificielle... artificielle</p>
             </div>
           </div>
           <div className="navbar-actions">
