@@ -1,0 +1,3 @@
+module.exports=[26023,a=>{"use strict";var b=a.i(9072);function c({children:a}){return(0,b.jsx)("html",{lang:"fr",children:(0,b.jsx)("body",{children:a})})}a.s(["default",()=>c,"metadata",0,{title:"Chat'bruti – Chatbot inutile",description:"Chat'bruti, le chatbot le plus inutile de la Nuit de l'Info. Complètement à côté de la plaque, mais étrangement vivant."}])}];
+
+//# sourceMappingURL=chatbruti2_chatbruti_app_layout_3df42a4f.js.map

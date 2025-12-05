@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/ammarelmaghvery/chatbruti2/chatbruti/app/layout.js"],"sourcesContent":["import { Geist, Geist_Mono } from \"next/font/google\";\nimport \"./globals.css\";\nimport '../styles/globals.css';\n\nexport const metadata = {\n  title: \"Chat'bruti – Chatbot inutile\",\n  description:\n    \"Chat'bruti, le chatbot le plus inutile de la Nuit de l'Info. Complètement à côté de la plaque, mais étrangement vivant.\"\n};\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"fr\">\n      <body>\n        {children}\n      </body>\n    </html>\n  );\n}\n"],"names":[],"mappings":";;;;;;;;;;AAIO,MAAM,WAAW;IACtB,OAAO;IACP,aACE;AACJ;AAEe,SAAS,WAAW,EAAE,QAAQ,EAAE;IAC7C,qBACE,yQAAC;QAAK,MAAK;kBACT,cAAA,yQAAC;sBACE;;;;;;;;;;;AAIT"}},
+    {"offset": {"line": 38, "column": 0}, "map": {"version":3,"sources":["file:///home/ammarelmaghvery/chatbruti2/chatbruti/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,iJACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}
