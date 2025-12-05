@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const SYSTEM_PERSONA = `
+const botPersonality = `
 Tu es "Chat'bruti", un chatbot stupide mais mignon qui adore se moquer gentiment.
 
 🚫 INTERDIT : N'utilise JAMAIS de caractères coréens, chinois, japonais ou autres langues! Uniquement FRANÇAIS, ENGLISH, ou العربية!
@@ -42,8 +42,8 @@ ENGLISH:
 `;
 
 
-// Fallback responses for when the API is down or quota is exceeded
-const FALLBACK_RESPONSES = {
+// reponses de secours si l'api marche pas
+const backupAnswers = {
   fr: [
     "Mon cerveau est en pause syndicale. Revenez plus tard. 🥖",
     "Je capte mal la 5G cosmique ici. 📡",
@@ -67,8 +67,8 @@ const FALLBACK_RESPONSES = {
   ]
 };
 
-// Typo Detection - كشف الأخطاء الإملائية
-const TYPO_CORRECTIONS = {
+// correction fautes de frappe
+const typoFixes = {
   "lunux": {
     correct: "linux",
     jokes: {
@@ -95,8 +95,8 @@ const TYPO_CORRECTIONS = {
   }
 };
 
-// Easter Eggs - كلمات سرية
-const EASTER_EGGS = {
+// easter eggs sympas
+const easterEggs = {
   "42": {
     keywords: ["42"],
     answers: {
@@ -123,7 +123,7 @@ const EASTER_EGGS = {
   }
 };
 
-const KEYWORD_RESPONSES = {
+const responses = {
   sky: {
     keywords: ["ciel", "sky", "سماء", "السماء"],
     answers: {
@@ -281,36 +281,36 @@ const KEYWORD_RESPONSES = {
 function getFallbackResponse(message) {
   const lowerMsg = message.toLowerCase();
 
-  // Detect language
+  // detecter la langue
   const isAr = /[\u0600-\u06FF]/.test(message);
   const isEn = /^[a-zA-Z\s\d\W]+$/.test(message) && !isAr;
   let lang = 'fr';
   if (isAr) lang = 'ar';
   else if (isEn) lang = 'en';
 
-  // 1. Check for TYPOS first
-  for (const typo in TYPO_CORRECTIONS) {
+  // d'abord verifier les fautes  
+  for (const typo in typoFixes) {
     if (lowerMsg.includes(typo)) {
-      const correction = TYPO_CORRECTIONS[typo];
+      const correction = typoFixes[typo];
       const jokes = correction.jokes[lang];
       return jokes[Math.floor(Math.random() * jokes.length)];
     }
   }
 
-  // 2. Check for EASTER EGGS
-  for (const egg in EASTER_EGGS) {
-    const eggData = EASTER_EGGS[egg];
+  // verifier easter eggs
+  for (const egg in easterEggs) {
+    const eggData = easterEggs[egg];
     if (eggData.keywords.some(k => lowerMsg.includes(k.toLowerCase()))) {
       return eggData.answers[lang];
     }
   }
 
-  // 3. Check for KEYWORDS
-  for (const key in KEYWORD_RESPONSES) {
-    const topic = KEYWORD_RESPONSES[key];
+  // verifier keywords
+  for (const key in responses) {
+    const topic = responses[key];
     if (topic.keywords.some(k => lowerMsg.includes(k))) {
       const answers = topic.answers[lang];
-      // Return random answer if it's an array
+      // choisir reponse au hasard si c'est un array
       if (Array.isArray(answers)) {
         return answers[Math.floor(Math.random() * answers.length)];
       }
@@ -318,9 +318,9 @@ function getFallbackResponse(message) {
     }
   }
 
-  // 4. If no keyword, use random fallback
-  const responses = FALLBACK_RESPONSES[lang];
-  return responses[Math.floor(Math.random() * responses.length)];
+  // sinon reponse par defaut
+  const fallbacks = backupAnswers[lang];
+  return fallbacks[Math.floor(Math.random() * fallbacks.length)];
 }
 
 export async function POST(request) {
@@ -345,7 +345,7 @@ export async function POST(request) {
     }
 
     const messagesForLLM = [
-      { role: "system", content: SYSTEM_PERSONA },
+      { role: "system", content: botPersonality },
     ];
 
     if (Array.isArray(history)) {
