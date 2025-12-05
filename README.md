@@ -1,10 +1,10 @@
-# Brutus - Le Chien le Plus Adorablement Stupide
+# Chat'bruti - Le Chatbot Délicieusement Inutile
 
 <div align="center">
 
-![Brutus Banner](public/brutus-logo.png)
+![Chat'bruti Banner](public/brutus-logo.png)
 
-**Un chien jaune qui essaie d'aider mais se trompe toujours**
+**Le chatbot le plus inutile mais le plus vivant de la Nuit de l'Info 2025**
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.0.7-black?logo=next.js)](https://nextjs.org)
 [![Groq AI](https://img.shields.io/badge/Groq-Llama_3.3_70B-orange)](https://groq.com)
@@ -41,50 +41,51 @@ Le défi consiste à créer un chatbot qui:
 
 ---
 
-## Notre Réponse: Brutus
+## Notre Réponse: Chat'bruti
 
-**Brutus** est un chien jaune adorable mais complètement idiot qui adore aider... mais se trompe toujours!
+**Chat'bruti** est un "scientifique" complètement stupide qui se prend pour un génie mais dit que des bêtises.
 
 ### Caractéristiques Principales
 
-- **Répond COMPLÈTEMENT à côté**: Logique de chien absurde garantie
-- **Détection d'erreurs orthographiques**: Se moque gentiment de vos fautes
-- **Easter Eggs cachés**: Mots secrets avec réponses spéciales
-- **Termine par des questions stupides**: "Tu aboies dans la douche?"
+- **Répond COMPLÈTEMENT à côté**: Logique pseudo-scientifique absurde
+- **Détection d'erreurs orthographiques**: Se moque gentiment de vos fautes (lunux, windovs, macc)
+- **Easter Eggs cachés**: Mots secrets (42, matrix, coffee) avec réponses spéciales
+- **Termine par des questions stupides**: "Les nuages ont des sentiments?"
 - **Trilingue**: Français, Anglais, Arabe (répond dans VOTRE langue)
 - **Design Premium**: Glassmorphism, animations, dark mode
 
-### Notre Chien a une Personnalité!
+### Chat'bruti a une Personnalité!
 
-**Nom:** Brutus  
-**Identité:** Un chien jaune adorable  
-**Trait principal:** Essaie d'aider mais se trompe TOUJOURS  
-**Obsessions:** Os, balles, écureuils, facteurs  
+**Nom:** Chat'bruti  
+**Identité:** Un "scientifique" qui se prend pour un génie  
+**Trait principal:** Dit TOUJOURS des bêtises pseudo-scientifiques  
+**Obsession:** Se moquer des systèmes d'exploitation avec des arguments stupides  
 
 ### Points Forts Uniques
 
 1. **Intelligence Artificielle Réelle**
    - Propulsé par Groq AI (Llama 3.3 70B)
-   - Réponses contextuelles chien variées
+   - Réponses contextuelles variées
    - Jamais les mêmes réponses deux fois
 
 2. **Système de Typo Detection**
    ```
    Vous écrivez: "lunux"
-   Brutus: "Lunux ? C'est comme un os lunaire ?"
+   Chat'bruti: "Lunux ? La version lunaire de Linux ?"
    ```
 
 3. **Easter Eggs**
    ```
    Vous écrivez: "42"
-   Brutus: "42 os! C'est beaucoup d'os! Tu veux jouer?"
+   Chat'bruti: "42 ? La réponse à la vie, l'univers et tout ! 
+                Mais quelle était la question déjà ?"
    ```
 
-4. **Questions Absurdes de Chien**
+4. **Questions Absurdes Finales**
    Chaque réponse se termine par une question sans rapport:
-   - "Au fait, tu préfères les os rouges ou les balles bleues?"
-   - "Les écureuils sont-ils des aliens?"
-   - "هل الكلاب الأخرى تحب البيتزا؟"
+   - "Au fait, les nuages ont des sentiments?"
+   - "Tu dors avec tes chaussettes?"
+   - "هل البطاطا تشعر بالوحدة في الثلاجة؟"
 
 5. **Support Multilingue Intelligent**
    - Détecte automatiquement votre langue
@@ -121,7 +122,7 @@ npm run dev
 # 5. Ouvrir http://localhost:3000
 ```
 
-**C'est tout!** Brutus est prêt en moins de 5 minutes.
+**C'est tout!** Le chatbot est prêt en moins de 5 minutes.
 
 ---
 
@@ -134,6 +135,20 @@ npm run dev
 | **Framer Motion** | Latest | Animations fluides |
 | **Vanilla CSS** | - | Design personnalisé |
 
+### Architecture
+
+```
+chatbruti/
+├── app/
+│   ├── page.js           # Interface principale
+│   ├── api/chat/route.js  # Backend AI + logique
+│   └── layout.js         # Layout global
+├── styles/
+│   └── globals.css       # Styles glassmorphism
+└── public/
+    └── brutus-logo.png   # Logo du chatbot
+```
+
 ---
 
 ## Exemples de Conversations
@@ -141,51 +156,62 @@ npm run dev
 ### Exemple 1: Question Simple
 ```
 User: "Quelle heure est-il ?"
-Brutus: "C'est l'heure de jouer! Toujours l'heure de jouer!
-         Au fait, tu préfères les os ou les balles?"
+Bot: "Il est 25h61. Tu es en retard ! 
+     Au fait, les pingouins portent des cravates le dimanche ?"
 ```
 
 ### Exemple 2: Détection de Typo
 ```
 User: "j'utilise windovs"
-Brutus: "Windovs ? Ça ressemble à une fenêtre pour chiens!
-         Les écureuils sont-ils des aliens?"
+Bot: "Windovs ? C'est Windows avec un accent russe ?
+     Tu crois que le fromage peut voler ?"
 ```
 
 ### Exemple 3: Easter Egg
 ```
 User: "matrix"
-Brutus: "Matrix? C'est un jeu de balles? J'adore les balles!
-         Tu aboies dans la douche?"
+Bot: "Tu veux la pilule rouge ou bleue ? J'ai oublié où je les ai mises.
+     Les cactus rêvent de moutons électriques ?"
 ```
 
 ### Exemple 4: Multilingue (Arabe)
 ```
 User: "أستخدم لينكس"
-Brutus: "لينكس مثل عظمة صعبة جداً!
-         بالمناسبة، هل الكلاب الأخرى تحب البيتزا؟"
+Bot: "لينكس للناس اللي يحبون تعذيب أنفسهم
+     بالمناسبة، هل الطماطم تشعر بالوحدة؟"
 ```
 
 ---
 
-## Pourquoi Brutus Gagne?
+## Pourquoi Chat'bruti Gagne?
 
 ### Conformité au Défi (100%)
 - Chatbot inutile mais vivant
 - Sublime/détourne les questions
-- **A un NOM**: Brutus
-- **A une TÊTE**: Logo de chien jaune
-- **A une PERSONNALITÉ**: Chien adorable mais stupide
+- **A un NOM**: Chat'bruti
+- **A une TÊTE**: Logo de personnage
+- **A une PERSONNALITÉ**: Faux scientifique stupide
 - Créativité sans limites
 
 ### Points Forts Compétitifs
 1. **Vraie IA** (Groq Llama 3.3 70B) - pas juste des réponses fixes
 2. **3 langues** - plus que demandé
-3. **Personnage visuel** - Brutus le chien jaune
+3. **Personnage visuel** - Logo distinctif
 4. **Easter Eggs** - interactive et surprenant
 5. **Typo Detection** - fonctionnalité unique
-6. **Questions finales** - signature distinctive de chien
+6. **Questions finales** - signature distinctive
 7. **Design Premium** - expérience visuelle exceptionnelle
+
+### Comparaison
+
+| Critère | Demandé | Chat'bruti |
+|---------|---------|------------|
+| Inutilité | Oui | Très inutile |
+| Vivant | Oui | IA réelle |
+| Personnalité | Oui | Forte |
+| Langues | 1 | 3 (FR/EN/AR) |
+| Easter Eggs | Bonus | 3+ inclus |
+| Design | - | Premium |
 
 ---
 
@@ -209,6 +235,13 @@ vercel
 ```
 
 **Temps de déploiement: moins de 2 minutes**
+
+---
+
+## Documentation Complète
+
+- [Rapport Technique](RAPPORT_TECHNIQUE.md) - Architecture détaillée
+- [Spécifications du Défi](https://www.nuitdelinfo.com)
 
 ---
 
@@ -238,10 +271,10 @@ MIT License - Utilisez, modifiez, rendez-le encore plus stupide!
 
 ### Features Spéciales
 
-**Personnage Visuel • Typo Detection • Easter Eggs • 3 Langues • IA Réelle • Questions de Chien**
+**Typo Detection • Easter Eggs • 3 Langues • IA Réelle • Questions Absurdes**
 
 **Fait avec passion pour la Nuit de l'Info 2025**
 
-[Retour en haut](#brutus---le-chien-le-plus-adorablement-stupide)
+[Retour en haut](#chatbruti---le-chatbot-délicieusement-inutile)
 
 </div>
