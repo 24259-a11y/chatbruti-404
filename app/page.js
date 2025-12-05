@@ -5,14 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, Info, X, Moon, Sun } from "lucide-react";
 
 export default function HomePage() {
-  const [messages, setMessages] = useState([
-    {
-      id: "welcome",
-      sender: "bot",
-      text: "👋 Salut ! Je m'appelle Chat'bruti, ton compagnon inutile mais charmant. Dis-moi, quel système d'exploitation tu utilises ? Windows, Mac, Linux... ou peut-être une calculatrice ? 🤓💻",
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    }
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,6 +13,18 @@ export default function HomePage() {
 
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
+
+  // Initialize welcome message on client side only to avoid hydration mismatch
+  useEffect(() => {
+    setMessages([
+      {
+        id: "welcome",
+        sender: "bot",
+        text: "👋 Salut ! Je m'appelle Chat'bruti, ton compagnon inutile mais charmant. Dis-moi, quel système d'exploitation tu utilises ? Windows, Mac, Linux... ou peut-être une calculatrice ? 🤓💻",
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      }
+    ]);
+  }, []);
 
   // Initialize theme
   useEffect(() => {
