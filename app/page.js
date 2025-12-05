@@ -20,7 +20,7 @@ export default function HomePage() {
       {
         id: "welcome",
         sender: "bot",
-        text: "👋 Salut ! Je m'appelle Chat'bruti, ton compagnon inutile mais charmant. Dis-moi, quel système d'exploitation tu utilises ? Windows, Mac, Linux... ou peut-être une calculatrice ? 🤓💻",
+        text: "👋 Ouaf! Je suis Brutus, un chien jaune qui adore aider... mais je me trompe toujours! 🐕💛 Dis-moi, tu préfères les os ou les balles? 🦴⚾",
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }
     ]);
@@ -138,17 +138,17 @@ export default function HomePage() {
       <nav className="navbar">
         <div className="navbar-content">
           <div className="brand">
-            <img src="/404-logo.png" alt="Chat'bruti Logo" className="logo-img" />
+            <img src="/brutus-logo.png" alt="Brutus Logo" className="logo-img" />
             <div>
-              <h1 className="title">Chat'bruti</h1>
-              <p className="subtitle">L'intelligence artificielle... artificielle</p>
+              <h1 className="title">Brutus</h1>
+              <p className="subtitle">Le chien le plus adorablement stupide de l'internet</p>
             </div>
           </div>
           <div className="navbar-actions">
             <button
               className="icon-btn"
               onClick={toggleTheme}
-              title={theme === "dark" ? "Mode Clair" : "Mode Sombre"}
+              title="Changer de thème"
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </button>
