@@ -1,3 +1,0 @@
-module.exports=[15300,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(68902);a.n(d("[project]/chatbruti2/chatbruti/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},30975,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(68902);a.n(d("[project]/chatbruti2/chatbruti/node_modules/next/dist/client/components/builtin/global-error.js"))},54929,a=>{"use strict";a.i(15300);var b=a.i(30975);a.n(b)}];
-
-//# sourceMappingURL=f5d93_next_dist_client_components_builtin_global-error_42bcb639.js.map
